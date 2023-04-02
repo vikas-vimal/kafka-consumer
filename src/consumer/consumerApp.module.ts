@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ClientKafka, ClientsModule, Transport } from '@nestjs/microservices';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { TestTopicHandlerService } from './handler/test.topic.handler';
 import { KafkaController } from './kafka/kafka.controller';
 import { UserService } from './services/user.service';
@@ -24,6 +25,6 @@ import { UserService } from './services/user.service';
     ]),
   ],
   controllers: [KafkaController],
-  providers: [ClientKafka, TestTopicHandlerService, UserService],
+  providers: [ClientKafka, TestTopicHandlerService, UserService, PrismaService],
 })
 export class ConsumerAppModule {}

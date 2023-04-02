@@ -4,6 +4,7 @@ import { ClientKafka, ClientsModule, Transport } from '@nestjs/microservices';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { TestTopicHandlerService } from './handler/test.topic.handler';
 import { KafkaController } from './kafka/kafka.controller';
+import { PostService } from './services/post.service';
 import { UserService } from './services/user.service';
 
 @Module({
@@ -25,6 +26,12 @@ import { UserService } from './services/user.service';
     ]),
   ],
   controllers: [KafkaController],
-  providers: [ClientKafka, TestTopicHandlerService, UserService, PrismaService],
+  providers: [
+    ClientKafka,
+    TestTopicHandlerService,
+    UserService,
+    PrismaService,
+    PostService,
+  ],
 })
 export class ConsumerAppModule {}

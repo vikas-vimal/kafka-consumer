@@ -1,8 +1,7 @@
 import './env';
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
-import { AppModule } from './app.module';
-import { PrismaService } from './prisma/prisma.service';
+import { AppModule } from 'src/app.module';
 // const PORT = Number(process.env.APP_PORT);
 // console.log({ PORT });
 
